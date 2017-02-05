@@ -87,10 +87,20 @@ public class Grafix{
 	}
 	return retStr;
     }
+    public void fun(){
+	for(int i = 0; i < getWidth(); i++){
+	    for(int j = 0; j< getHeight();j++){
+		data[i][j].setR((i+j)%256);
+		data[i][j].setG((i-j)%256);
+		data[i][j].setB((i*j)%256);
+	    }
+	}
+    }
     //Write function copies the pixels to image file
     public void write(String name){
 	try{
 	    File f = new File(name);
+	    f.delete();
 	    f.createNewFile();
 	    FileWriter w = new FileWriter(f, true);
 	    w.write("P3 "+getWidth()+" "+getHeight()+" 255\n");
