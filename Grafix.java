@@ -19,13 +19,13 @@ public class Grafix{
 	}
 	//mutators
 	public void setR(int r){
-	    r=r;
+	    this.r=r;
 	}
 	public void setG(int g){
-            g=g;
+            this.g=g;
         }
         public void setB(int b){
-            b=b;
+            this.b=b;
         }
 	//accessors
 	public int getR(){
@@ -51,7 +51,7 @@ public class Grafix{
 	data = new Pixel[width][height];
 	for(int i = 0; i< width; i++){
 	    for(int j = 0; j< height; j++){
-		data[i][j]=new Pixel();
+		data[i][j]=new Pixel(100,100,100);
 	    }
 	}
     }
@@ -90,9 +90,12 @@ public class Grafix{
     public void fun(){
 	for(int i = 0; i < getWidth(); i++){
 	    for(int j = 0; j< getHeight();j++){
-		data[i][j].setR((i+j)%256);
-		data[i][j].setG((i-j)%256);
-		data[i][j].setB((i*j)%256);
+		//69 is ascii for E
+		data[i][j].setR((i+j)*69%256);
+		//76 is ascii for L
+		data[i][j].setG((i-j)*76%256);
+		//76 is ascii for Y
+		data[i][j].setB((i*j)*89%256);
 	    }
 	}
     }
