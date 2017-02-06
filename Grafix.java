@@ -90,12 +90,10 @@ public class Grafix{
     public void fun(){
 	for(int i = 0; i < getWidth(); i++){
 	    for(int j = 0; j< getHeight();j++){
-		//69 is ascii for E
-		data[i][j].setR((i+j)*69%256);
-		//76 is ascii for L
-		data[i][j].setG((i-j)*76%256);
-		//76 is ascii for Y
-		data[i][j].setB((i*j)*89%256);
+		data[i][j].setR((i+j)%256);
+		data[i][j].setG((i-j)%256);
+		data[i][j].setB((i*j)%256);
+		//It looks pretty cool
 	    }
 	}
     }
